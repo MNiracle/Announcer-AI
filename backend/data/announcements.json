@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1789585720533",
+    "title": "Academic",
+    "message": "dinning time",
+    "category": "Academic",
+    "scheduledTime": "12:13",
+    "duration": null,
+    "repeat": "daily",
+    "createdAt": "2026-09-16T19:08:40.533Z"
+  },
+  {
+    "id": "1789587266326",
+    "title": "Worship",
+    "message": "worship time",
+    "category": "Worship",
+    "scheduledTime": "12:36",
+    "duration": null,
+    "repeat": "weekly",
+    "weeklyDay": 3,
+    "createdAt": "2026-09-16T19:34:26.326Z"
+  },
+  {
+    "id": "1789587434221",
+    "title": "Academic",
+    "message": "worship over return to class",
+    "category": "Academic",
+    "scheduledTime": "12:38",
+    "duration": null,
+    "repeat": "weekly",
+    "weeklyDay": 3,
+    "createdAt": "2026-09-16T19:37:14.221Z"
+  }
+]

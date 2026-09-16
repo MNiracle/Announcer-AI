@@ -1,0 +1,670 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Announcer AI - Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================================
+             HEADER
+        ================================= -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <img
+                    src="images/logo.png"
+                    alt="Beamsknight Academy"
+                    style="
+                    width:48px;
+                    height:48px;
+                    object-fit:contain;
+                    border-radius:10px;
+                    "
+                >
+
+                <div>
+
+                    <h1>
+                        Beamsknight Academy
+                    </h1>
+
+                    <p>
+                        Beamsknight Academy Anouncer
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                style="
+                color:white;
+                text-decoration:none;
+                background:#6c63ff;
+                padding:10px 15px;
+                border-radius:10px;
+                font-size:13px;
+                "
+            >
+                ← Announcer
+            </a>
+
+
+            <button id="logoutButton">
+                🚪 Logout
+            </button>
+
+        </header>
+
+
+        <!-- ================================
+             MAIN
+        ================================= -->
+
+        <main style="display:block;">
+
+
+            <!-- ================================
+                 SYSTEM STATUS
+            ================================= -->
+
+            <div
+                class="announcement-card"
+                style="margin-bottom:25px;"
+            >
+
+                <div
+                    style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    gap:15px;
+                    flex-wrap:wrap;
+                    "
+                >
+
+                    <div>
+
+                        <span
+                            style="
+                            color:#8d8aa8;
+                            font-size:12px;
+                            letter-spacing:1px;
+                            "
+                        >
+                            SYSTEM STATUS
+                        </span>
+
+                        <h3 style="margin-top:6px;">
+                            Beamsknight academy anouncer
+                        </h3>
+
+                    </div>
+
+
+                    <div
+                        style="
+                        color:#4ade80;
+                        font-weight:bold;
+                        "
+                    >
+                        🟢 System Online
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 STATISTICS
+            ================================= -->
+
+            <div
+                style="
+                display:grid;
+                grid-template-columns:repeat(3,1fr);
+                gap:20px;
+                margin-bottom:25px;
+                "
+            >
+
+                <div class="announcement-card">
+
+                    <span
+                        style="
+                        color:#8d8aa8;
+                        font-size:12px;
+                        "
+                    >
+                        TOTAL ANNOUNCEMENTS
+                    </span>
+
+                    <h2
+                        id="totalAnnouncements"
+                        style="margin-top:10px;"
+                    >
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="announcement-card">
+
+                    <span
+                        style="
+                        color:#8d8aa8;
+                        font-size:12px;
+                        "
+                    >
+                        NEXT ANNOUNCEMENT
+                    </span>
+
+                    <h2
+                        id="nextAnnouncement"
+                        style="margin-top:10px;"
+                    >
+                        --
+                    </h2>
+
+                </div>
+
+
+                <div class="announcement-card">
+
+                    <span
+                        style="
+                        color:#8d8aa8;
+                        font-size:12px;
+                        "
+                    >
+                        SCHEDULE STATUS
+                    </span>
+
+                    <h2
+                        id="scheduleStatus"
+                        style="margin-top:10px;"
+                    >
+                        Active
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 ANNOUNCEMENT MANAGER
+            ================================= -->
+
+            <section class="announcement-section">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <span>
+                            ADMINISTRATION
+                        </span>
+
+                        <h2>
+                            Announcement Manager
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     VOICE SELECTION
+                ================================= -->
+
+                <div
+                    class="announcement-card"
+                    style="
+                    display:block;
+                    margin-top:35px;
+                    "
+                >
+
+                    <h3>
+                        🎙️ Announcer Voice
+                    </h3>
+
+
+                    <div style="margin-top:20px;">
+
+                        <label for="voiceSelect">
+                            Select Voice
+                        </label>
+
+                        <select
+                            id="voiceSelect"
+                            style="
+                            width:100%;
+                            margin-top:8px;
+                            padding:14px;
+                            background:#060912;
+                            color:white;
+                            border:1px solid rgba(255,255,255,.1);
+                            border-radius:10px;
+                            "
+                        >
+
+                            <option value="">
+                                Loading available voices...
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        id="testVoice"
+                        class="announce-button"
+                        style="margin-top:20px;"
+                    >
+                        🔊 Test Voice
+                    </button>
+
+
+                    <button
+                        id="saveVoice"
+                        class="announce-button"
+                        style="margin-top:10px;"
+                    >
+                        💾 Save Voice
+                    </button>
+
+                </div>
+
+
+                <!-- ================================
+                     ANNOUNCER CONTROL
+                ================================= -->
+
+                <div
+                    class="announcement-card"
+                    style="
+                    display:block;
+                    margin-top:35px;
+                    "
+                >
+
+                    <h3>
+                        🔔 Announcer Control
+                    </h3>
+
+                    <p
+                        style="
+                        color:#9ca3af;
+                        margin-top:8px;
+                        "
+                    >
+                        Control automatic announcements
+                    </p>
+
+
+                    <button
+                        id="announcerToggle"
+                        class="announce-button"
+                        style="margin-top:20px;"
+                    >
+                        🟢 Announcer ON
+                    </button>
+
+                </div>
+
+
+                <!-- ================================
+                     ADD ANNOUNCEMENT
+                ================================= -->
+
+                <div
+                    class="announcement-card"
+                    style="
+                    display:block;
+                    margin-top:25px;
+                    "
+                >
+
+                    <h3>
+                        Add New Announcement
+                    </h3>
+
+
+                    <!-- TIME -->
+
+                    <div style="margin-top:20px;">
+
+                        <label for="announcementTime">
+                            Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="announcementTime"
+                            style="
+                            width:100%;
+                            margin-top:8px;
+                            padding:14px;
+                            background:#060912;
+                            color:white;
+                            border:1px solid rgba(255,255,255,.1);
+                            border-radius:10px;
+                            "
+                        >
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div style="margin-top:20px;">
+
+                        <label for="announcementCategory">
+                            Announcement Category
+                        </label>
+
+                        <select
+                            id="announcementCategory"
+                            style="
+                            width:100%;
+                            margin-top:8px;
+                            padding:14px;
+                            background:#060912;
+                            color:white;
+                            border:1px solid rgba(255,255,255,.1);
+                            border-radius:10px;
+                            "
+                        >
+
+                            <option value="General">
+                                📢 General
+                            </option>
+
+                            <option value="Break">
+                                🕐 Break
+                            </option>
+
+                            <option value="Lunch">
+                                🍽️ Lunch
+                            </option>
+
+                            <option value="Assembly">
+                                🏫 Assembly
+                            </option>
+
+                            <option value="Worship">
+                                🙏 Worship
+                            </option>
+
+                            <option value="Emergency">
+                                🚨 Emergency
+                            </option>
+
+                            <option value="Academic">
+                                📚 Academic
+                            </option>
+
+                            <option value="Closing">
+                                🚌 Closing
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- REPEAT -->
+
+                    <div style="margin-top:20px;">
+
+                        <label for="announcementRepeat">
+                            Repeat
+                        </label>
+
+                        <select
+                            id="announcementRepeat"
+                            style="
+                            width:100%;
+                            margin-top:8px;
+                            padding:14px;
+                            background:#060912;
+                            color:white;
+                            border:1px solid rgba(255,255,255,.1);
+                            border-radius:10px;
+                            "
+                        >
+
+                            <option value="once">
+                                Once
+                            </option>
+
+                            <option value="daily">
+                                🔄 Every Day
+                            </option>
+
+                            <option value="weekdays">
+                                📅 Weekdays (Monday - Friday)
+                            </option>
+
+                            <option value="weekly">
+                                🗓️ Every Week
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- WEEKLY DAY -->
+
+                    <div
+                        id="weeklyDayContainer"
+                        style="
+                        display:none;
+                        margin-top:15px;
+                        "
+                    >
+
+                        <label for="weeklyDay">
+                            Day of Week
+                        </label>
+
+                        <select
+                            id="weeklyDay"
+                            style="
+                            width:100%;
+                            margin-top:8px;
+                            padding:14px;
+                            background:#060912;
+                            color:white;
+                            border:1px solid rgba(255,255,255,.1);
+                            border-radius:10px;
+                            "
+                        >
+
+                            <option value="1">
+                                Monday
+                            </option>
+
+                            <option value="2">
+                                Tuesday
+                            </option>
+
+                            <option value="3">
+                                Wednesday
+                            </option>
+
+                            <option value="4">
+                                Thursday
+                            </option>
+
+                            <option value="5">
+                                Friday
+                            </option>
+
+                            <option value="6">
+                                Saturday
+                            </option>
+
+                            <option value="0">
+                                Sunday
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ANNOUNCEMENT MESSAGE -->
+
+                    <div style="margin-top:20px;">
+
+                        <label for="announcementMessage">
+                            Announcement
+                        </label>
+
+                        <textarea
+                            id="announcementMessage"
+                            rows="5"
+                            placeholder="Enter announcement..."
+                            style="
+                            width:100%;
+                            margin-top:8px;
+                            padding:14px;
+                            background:#060912;
+                            color:white;
+                            border:1px solid rgba(255,255,255,.1);
+                            border-radius:10px;
+                            resize:vertical;
+                            "
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SAVE -->
+
+                    <button
+                        class="announce-button"
+                        id="saveAnnouncement"
+                        style="margin-top:20px;"
+                    >
+                        ➕ Add Announcement
+                    </button>
+
+                </div>
+
+
+                <!-- ================================
+                     SCHEDULED ANNOUNCEMENTS
+                ================================= -->
+
+                <div
+                    class="schedule"
+                    style="margin-top:35px;"
+                >
+
+                    <h3>
+                        Scheduled Announcements
+                    </h3>
+
+
+                    <div
+                        id="announcementList"
+                        class="schedule-list"
+                        style="
+                        grid-template-columns:1fr;
+                        "
+                    >
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     ANNOUNCEMENT HISTORY
+                ================================= -->
+
+                <div
+                    class="announcement-card"
+                    style="
+                    display:block;
+                    margin-top:35px;
+                    "
+                >
+
+                    <h3>
+                        📜 Announcement History
+                    </h3>
+
+
+                    <p
+                        style="
+                        color:#9ca3af;
+                        margin-top:8px;
+                        "
+                    >
+                        Recent announcements delivered by
+                        Beamsknight academy anouncer
+                    </p>
+
+
+                    <div
+                        id="announcementHistory"
+                        style="
+                        margin-top:20px;
+                        "
+                    >
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+
+        <!-- ================================
+             FOOTER
+        ================================= -->
+
+        <footer>
+            Beamsknight academy anouncer • Administrator Panel
+        </footer>
+
+    </div>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

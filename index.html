@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Announcer AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="topbar">
+
+<div class="brand">
+
+    <img
+        src="images/logo.png"
+        alt="Beamsknight Academy"
+        style="
+        width:48px;
+        height:48px;
+        object-fit:contain;
+        border-radius:10px;
+        "
+    >
+
+    <div>
+        <h1>Beamsknight Academy</h1>
+        <p>Beamsknight Academy Anouncer</p>
+    </div>
+
+</div>
+
+
+
+            <div class="status" id="announcerStatus">
+    🟢 Announcer Active
+</div>
+
+        </header>
+
+
+        <main>
+
+            <!-- AVATAR -->
+
+            <section class="avatar-section">
+
+                <div class="avatar-card" id="avatarCard">
+
+                    <div class="glow"></div>
+
+<img
+    src="avatars/announcer.png"
+    alt="Announcer AI"
+    id="avatar"
+>
+
+
+                    
+
+                </div>
+
+                <h2>Announcer AI</h2>
+
+                <p class="role">
+                    Your intelligent school announcer
+                </p>
+
+                <div class="speaking-status" id="speakingStatus">
+                    ● Ready to announce
+                </div>
+
+            </section>
+
+
+            <!-- ANNOUNCEMENT -->
+
+            <section class="announcement-section">
+
+                <div class="section-title">
+
+                    <div>
+                        <span>SCHOOL ANNOUNCER</span>
+
+                        <h2>Today's Announcements</h2>
+                    </div>
+
+                    <div class="clock" id="clock">
+                        00:00:00
+                    </div>
+
+                </div>
+
+
+                <div class="announcement-card">
+
+    <div class="announcement-icon">
+        📢
+    </div>
+
+    <div>
+
+        <div
+            id="nowAnnouncing"
+            style="
+            display:none;
+            margin-bottom:8px;
+            color:#a9a4ff;
+            font-weight:600;
+            "
+        >
+            🔊 Now Announcing
+        </div>
+
+        <small>
+            CURRENT ANNOUNCEMENT
+        </small>
+
+        <h3 id="announcementText">
+            Good morning students.
+            Welcome to school.
+        </h3>
+
+    </div>
+
+</div>
+
+                <!-- TEST BUTTON -->
+
+                <button
+                    class="announce-button"
+                    id="announceButton"
+                >
+                    🔊 Test Announcement
+                </button>
+
+
+               <!-- SCHEDULE -->
+
+<div class="schedule">
+
+    <h3>School Schedule</h3>
+
+    <div class="schedule-list" id="scheduleList">
+
+        <!-- Schedule loaded from Admin Panel -->
+
+    </div>
+
+</div>
+
+
+        <footer>
+            Announcer AI • Intelligent School Communication
+        </footer>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
