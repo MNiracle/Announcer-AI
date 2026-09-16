@@ -2,9 +2,7 @@
 /* =========================================
    ANNOUNCER AI — MAIN APP
 ========================================= */
-
-const API_URL =
-    "http://localhost:5000/api/announcements";
+const API_URL = "https://announcer-ai-backend.onrender.com/api/announcements";
 
 const avatar = document.getElementById("avatar");
 const avatarCard = document.getElementById("avatarCard");
