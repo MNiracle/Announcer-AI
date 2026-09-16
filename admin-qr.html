@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Announcer AI - Admin QR</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0b0b0b;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            background: #151515;
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+        }
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        .gold {
+            color: #d4af37;
+        }
+
+        p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            background: white;
+            padding: 18px;
+            width: fit-content;
+            margin: auto;
+            border-radius: 12px;
+        }
+
+        .link {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #aaa;
+            word-break: break-all;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #d4af37;
+            color: #111;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Announcer <span class="gold">AI</span></h1>
+
+        <p>Scan this QR code to open the Admin Login.</p>
+
+        <div id="qrcode"></div>
+
+        <div class="link">
+            https://mniracle.github.io/Announcer-AI/admin.html
+        </div>
+
+        <button onclick="window.print()">
+            Print QR Code
+        </button>
+
+    </div>
+
+    <script>
+        const adminURL =
+            "https://mniracle.github.io/Announcer-AI/admin.html";
+
+        new QRCode(
+            document.getElementById("qrcode"),
+            {
+                text: adminURL,
+                width: 250,
+                height: 250,
+                correctLevel: QRCode.CorrectLevel.H
+            }
+        );
+    </script>
+
+</body>
+</html>
+
